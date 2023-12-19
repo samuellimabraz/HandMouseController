@@ -25,7 +25,7 @@ python main.py
 ```
 
 - The webcam feed will open, and you'll see a bounding box for hand detection.
-- Move your hand within the bounding box to control the mouse cursor.
+- Move your indexer finger within the bounding box to control the mouse cursor.
 - Perform gestures to trigger actions:
   - Click: Pinch your thumb and index finger.
   - Spacebar press: Keep your thumb and index finger close.

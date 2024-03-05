@@ -1,6 +1,10 @@
 import time
 import math
 
+import os
+import sys
+import urllib.request
+
 import cv2
 import numpy as np
 import mediapipe as mp
@@ -378,3 +382,17 @@ class HandTracker:
             cv2.circle(img, (cx, cy), 10, (255, 0, 255), cv2.FILLED)
 
         return length, img, [x1, y1, x2, y2, cx, cy]
+    
+    @staticmethod
+    def download_model():
+        root = os.path.dirname(os.path.realpath(__file__))
+        # Unino to res folder
+        root = os.path.join(root, "..", "res")
+        filename = os.path.join(root, "hand_landmarker.task")
+        if os.path.exists(filename):
+            print(f"O arquivo {filename} já existe, pulando o download.")
+        else:
+            base = "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/latest/hand_landmarker.task"
+            urllib.request.urlretrieve(base, filename)
+
+        return filename

@@ -95,22 +95,9 @@ class MouseHandController:
         return frame
 
 
-def download_model():
-    root = os.path.dirname(os.path.realpath(__file__))
-    # Unino to res folder
-    root = os.path.join(root, "..", "res")
-    filename = os.path.join(root, "hand_landmarker.task")
-    if os.path.exists(filename):
-        print(f"O arquivo {filename} já existe, pulando o download.")
-    else:
-        base = "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/latest/hand_landmarker.task"
-        urllib.request.urlretrieve(base, filename)
-
-    return filename
-
 
 def main():
-    model = download_model()
+    model = HandTracker.download_model()
 
     tracker = HandTracker(
         model=model,

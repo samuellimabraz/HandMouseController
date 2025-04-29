@@ -162,20 +162,6 @@ class HandTracker:
             numpy.ndarray: Image with the landmarks drawn.
         """
 
-        # Show the FPS
-        fps_text = "FPS = {:.1f}".format(self.FPS)
-
-        cv2.putText(
-            image,
-            fps_text,
-            (24, 30),
-            cv2.FONT_HERSHEY_DUPLEX,
-            font_size,
-            text_color,
-            font_thickness,
-            cv2.LINE_AA,
-        )
-
         HANDEDNESS_TEXT_COLOR = (88, 205, 54)  # vibrant green
 
         if self.DETECTION_RESULT:

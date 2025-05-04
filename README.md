@@ -1,11 +1,9 @@
 # HandMouseController
-This project utilizes MediaPipe and AutoPy to control the mouse cursor and execute actions based on hand gestures. The Hand Gesture Mouse Control allows you to interact with your computer using simple hand movements.
+This project utilizes MediaPipe and PyAutoGUI to control the mouse cursor and execute actions based on hand gestures. The Hand Gesture Mouse Control allows you to interact with your computer using simple hand movements.
 
 ## Prerequisites
-- Python 3.8 and up (Beware of the autopy library)
-- OpenCV (pip install opencv-python)
-- MediaPipe (pip install mediapipe)
-- AutoPy (pip install autopy)
+- Python 3.8 and up
+- The required packages are listed in the requirements.txt file
   
 ## Installation
 1. Clone the repository:
@@ -14,21 +12,25 @@ git clone https://github.com/samuellimabraz/HandMouseController.git
 ```
 2. Change into the project directory:
 ```bash
-cd HandMouseController\
+cd HandMouseController
+```
+3. Install the required dependencies:
+```bash
+pip install -r requirements.txt
 ```
 
 ## Usage
 
 Run the main script:
 ```bash
-python main.py
+python src/main.py
 ```
 
 - The webcam feed will open, and you'll see a bounding box for hand detection.
-- Move your indexer finger within the bounding box to control the mouse cursor.
+- Move your index finger within the bounding box to control the mouse cursor.
 - Perform gestures to trigger actions:
-  - Click: Pinch your thumb and index finger.
-  - Spacebar press: Keep your thumb and index finger close.
+  - Click: Bring your middle finger close to your index finger.
+  - Space bar press: Bring your thumb close to your index finger.
 - Press 'q' to exit the application.
 
 ## Configuration
